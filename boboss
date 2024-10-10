@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification Discord</title>
+</head>
+<body>
+  <h1>Mon Site avec Webhook Discord</h1>
+  <p>La notification sera envoyée automatiquement à Discord lorsque la page se charge.</p>
+
+  <script>
+    window.onload = function() {
+      const webhookUrl = 'https://discord.com/api/webhooks/1293778615497920572/jYJnmhDap2fQh5MjNwhziPkb3y5zOTDaNZl6EQPd2ycXaXG9Wr5Z8p2IQpbPL7m4kTgq';
+      const data = {
+        content: "@everyone Attention ! Un modérateur a cliqué sur le lien !"
+      };
+
+      fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        console.log('Notification envoyée à Discord !');
+      })
+      .catch(error => {
+        console.error('Erreur:', error);
+      });
+    }
+  </script>
+</body>
+</html>
