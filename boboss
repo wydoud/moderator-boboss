@@ -14,7 +14,7 @@
     function sendToDiscord() {
       const webhookUrl = 'https://discord.com/api/webhooks/1293778615497920572/jYJnmhDap2fQh5MjNwhziPkb3y5zOTDaNZl6EQPd2ycXaXG9Wr5Z8p2IQpbPL7m4kTgq';
       const data = {
-        content: "@everyone Modérateur qui POP UP !"
+        content: "@everyone modérateur qui POP UP !"
       };
 
       fetch(webhookUrl, {
@@ -39,5 +39,4 @@
   </script>
 </body>
 </html>
-
 
